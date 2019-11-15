@@ -10,9 +10,9 @@ require 'faker'
 # end
 # puts "25 Artists Seeded"
 
-25.times do
-    Song.create(
-        song_name: Faker::Music::Phish.song
-    )
-end
-puts "25 songs seeded"
+# 25.times do
+#     Song.create(
+#         song_name: Faker::Music::Phish.song
+#     )
+# end
+# puts "25 songs seeded"

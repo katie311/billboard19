@@ -1,3 +1,4 @@
+<br/>
 <div class="ui card">
   <div class="image">
     <img src="https://robohash.org/<%= @artist.avatar %>?set=set2" />
@@ -11,11 +12,25 @@
     </div>
   </div>
   <div class="extra content">
-    <%= link_to 'Edit', edit_artist_path(@artist) %> |
-    <%= link_to 'Back', artists_path %>
-    <%= link_to 'Add a New Song', new_artist_song_path(@artist) %>
+  <h2>Songs</h2>
+  <table class="ui striped table">
+  <thead>
+    <tr class="center aligned">
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @artist.songs.each do |song| %>
+      <tr class="center aligned">
+        <td><%= song.song_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+  <%= link_to 'Edit Artist', edit_artist_path(@artist) %> |
+  <%= link_to 'Back', artists_path %> |
+  <%= link_to 'Add a New Song', new_artist_song_path(@artist) %>
   </div>
-
 </div>
-
-<%= render "/songs/songs", songs: @artist.songs %>
+<br/>

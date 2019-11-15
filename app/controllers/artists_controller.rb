@@ -6,6 +6,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @artist.songs = Song.all
   end
 
   def new
